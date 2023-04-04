@@ -31,12 +31,12 @@
     {
       "name":"api",
       "urls": [
-               "http://localhost:3000/posts",
-               "http://localhost:3000/todo"
+               "http://localhost:5000/posts",
+               "http://localhost:5000/todo"
               ],
       "cacheConfig": {
-         "maxSize": 20,
-         "maxAge": "1hr",
+         "maxSize": 20, 
+         "maxAge": "1h",
          "timeout": "5s"
       }
     }

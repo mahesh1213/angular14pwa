@@ -25,3 +25,35 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## ####################################################################
+
+## pwa 
+maxSize - should not greater than "20" in ngsw-config.json. request url to allow
+strategy - performance (based on maxAge it will take from cash store).
+           freshness - it take based on timeout over it will from cash store.
+
+swupdate use for to get notifaction form service worker. (@angular service-worker).
+
+versionDetectEvent,versionInstallationEvent,versionReadyEvent (new version update from server).
+
+unrecoverable -> when service worker correpted.
+
+## poll for server update 
+
+checkForUpdate,activateUpdate
+
+## push notifaction
+ messages,notifationclick,subcribe to current push notifcaion, isenaable
+
+ {
+  "notification": {
+    "title": "New Notification!",
+    "data": {
+      "onActionClick": {
+        "default": {"operation": "openWindow", "url": "foo"}
+      }
+    }
+  }
+}
+

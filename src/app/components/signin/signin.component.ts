@@ -2,8 +2,10 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { chart } from 'highcharts';
 import * as Highcharts from 'highcharts';
 import io from 'socket.io-client';
+import { HttpClient } from '@angular/common/http';
+import { SwPush, SwUpdate } from '@angular/service-worker';
 
-const socket = io('http://localhost:3000')
+const socket = io('http://localhost:3000');
 
 @Component({
   selector: 'app-signin',
@@ -12,14 +14,19 @@ const socket = io('http://localhost:3000')
 })
 export class SigninComponent implements OnInit {
   @ViewChild('chartTarget') chartTarget!: ElementRef;
-
   myChart!: Highcharts.Chart;
-  constructor() { }
+  constructor(private updateservice:SwUpdate, private pushService:SwPush) { }
   ngOnInit(): void {
     socket.on('data1',(res)=>{
       this.updateChart(res);
-    })
-  }
+    });
+    if(!this.updateservice.isEnabled){
+      return;
+       }
+
+    this.#handleNotifaction();
+  
+   }
 
   updateChart(res:any){
     this.myChart.series[0].setData(res);
@@ -87,6 +94,24 @@ export class SigninComponent implements OnInit {
 
 
     this.myChart = chart(this.chartTarget.nativeElement, options);
+  }
+
+  async #handleNotifaction(){
+    const sub = await this.pushService.requestSubscription({
+      serverPublicKey: 'BLJJGwiEene6WWaZ_mMiD1CovYb3a-SRj9dmOzqsyduWAKl82RU1HXxHJDoOSZl9RYPtmNmPR3JZf1Ppt7ul70Q'
+    });
+
+    this.pushService.messages.subscribe((message)=>{
+      console.log('pushService.messages',message);
+    });
+
+    this.pushService.notificationClicks.subscribe((message)=>{
+      console.log('pushService.notificationClicks',message);
+    });
+
+    this.pushService.subscription.subscribe((subscription)=>{
+      console.log('pushService.subscription',subscription);
+    });
   }
 
 }

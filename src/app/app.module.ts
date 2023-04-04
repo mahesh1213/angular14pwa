@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './sharemodule/material.module';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
       registrationStrategy: 'registerWhenStable:30000'
     }),
     BrowserAnimationsModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
