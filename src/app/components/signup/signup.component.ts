@@ -39,7 +39,7 @@ export class SignupComponent implements OnInit {
     // })
 
     // poll for server update.
-      
+    console.log('checked for update method call');
     const interval = setInterval(async () => {
        const shouldUpdate = await this.updateservice.checkForUpdate();
        console.log('checked for update' + shouldUpdate);
@@ -48,7 +48,7 @@ export class SignupComponent implements OnInit {
              console.log('Active update with result'+result);
              clearInterval(interval);
        }
-    })
+    }, 10000)
 
     this.updateservice.unrecoverable.subscribe((event:UnrecoverableStateEvent)=>{
        console.log('Error reason:', event.reason);

@@ -9,11 +9,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './sharemodule/material.module';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    components
+    components,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
     HighchartsChartModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    //{provide : LocationStrategy , useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

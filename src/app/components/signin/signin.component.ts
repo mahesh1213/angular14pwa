@@ -98,8 +98,9 @@ export class SigninComponent implements OnInit {
 
   async #handleNotifaction(){
     const sub = await this.pushService.requestSubscription({
-      serverPublicKey: 'BLJJGwiEene6WWaZ_mMiD1CovYb3a-SRj9dmOzqsyduWAKl82RU1HXxHJDoOSZl9RYPtmNmPR3JZf1Ppt7ul70Q'
-    });
+      serverPublicKey: 'BLTytCGNgiogVxHoezqcGIJ1-vkVIrB4b47KZBPCzehFq9lE_4o1YwLmJKLKBqY-cGRCPkWLMecp-_zudy-rZvo'
+    }).then((sub)=> console.log(sub))
+     .catch((err)=> console.log('error occur',err));
 
     this.pushService.messages.subscribe((message)=>{
       console.log('pushService.messages',message);

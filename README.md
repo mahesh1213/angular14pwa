@@ -57,3 +57,11 @@ checkForUpdate,activateUpdate
   }
 }
 
+## to run production
+ng build --configuration production
+
+## angular application build dist local
+http-server -a localhost -p 8000 -c-1
+
+## json data in local server
+json-server --watch db.json -p 5000
