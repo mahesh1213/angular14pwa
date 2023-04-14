@@ -8,6 +8,24 @@
       [(update)]="updateFromInput"
     >
     </highcharts-chart> -->
+    <p [innerHTML]="text1"></p>
+    <p>{{script}}</p>
+<p>{{div}}</p>
+<input [(ngModel)]="firstName" (ngModelChange)="firstNameChanged($event)"/>
+<input (ngModelChange)="lastNameChanged($event)" [(ngModel)]="lastName" />
+<div [ngClass]="'primary big'">Sample Text string</div>
+<div [ngClass]="{ primary: true, big: true }">Sample Text</div>
+<div [ngClass]="['primary big','italics']">Sample Text array</div>
+<div [ngClass]="['primary','italics']">Sample Text array and string</div>
+
+<p> current count is data {{child.count}} </p>
+        
+   <app-child #child></app-child>
+   <app-subchild></app-subchild>
+   <p> current count is {{subchildData?.count}} </p>
+        <button (click)="incrementchild()">Increment</button>
+        <button (click)="decrementchild()">decrement</button>
+
     <div #chartTarget style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto"></div>
     
    </div>

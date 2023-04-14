@@ -10,6 +10,8 @@ import { MaterialModule } from './sharemodule/material.module';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     }),
     BrowserAnimationsModule,
     HighchartsChartModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     //{provide : LocationStrategy , useClass: HashLocationStrategy}

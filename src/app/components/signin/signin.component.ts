@@ -1,9 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit,AfterViewInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { chart } from 'highcharts';
 import * as Highcharts from 'highcharts';
 import io from 'socket.io-client';
 import { HttpClient } from '@angular/common/http';
 import { SwPush, SwUpdate } from '@angular/service-worker';
+import { SubchildComponent } from './subchild/subchild.component';
 
 const socket = io('http://localhost:3000');
 
@@ -12,10 +13,17 @@ const socket = io('http://localhost:3000');
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
-export class SigninComponent implements OnInit {
+export class SigninComponent implements OnInit,AfterViewInit {
   @ViewChild('chartTarget') chartTarget!: ElementRef;
   myChart!: Highcharts.Chart;
-  constructor(private updateservice:SwUpdate, private pushService:SwPush) { }
+  @ViewChild(SubchildComponent, { static: false }) subchild!: SubchildComponent;
+  text1="The <b>Angular</b> is printed in bold"
+  script ='<script>alert("You are hacked")</script>'
+div='<div>this is a div</div>';
+firstName="";
+lastName="";
+subchildData:any;
+  constructor(private updateservice:SwUpdate, private pushService:SwPush,private ref: ChangeDetectorRef) { }
   ngOnInit(): void {
     socket.on('data1',(res)=>{
       this.updateChart(res);
@@ -94,6 +102,15 @@ export class SigninComponent implements OnInit {
 
 
     this.myChart = chart(this.chartTarget.nativeElement, options);
+
+    setTimeout(() => {
+      this.subchildData = this.subchild;
+    });
+
+  }
+
+  ngAfterContentChecked() {
+    this.ref.detectChanges();
   }
 
   async #handleNotifaction(){
@@ -114,5 +131,25 @@ export class SigninComponent implements OnInit {
       console.log('pushService.subscription',subscription);
     });
   }
+
+  firstNameChanged(arg:any) {
+    console.log(
+        "firstNameChanged  argument " + arg + "  component " + this.firstName
+    );
+  }
+
+  lastNameChanged(arg:any) {
+    console.log(
+        "lastNameChanged  argument " + arg + "  component " + this.lastName
+    );
+  }
+
+
+  incrementchild() {
+    this.subchild.increment();
+  }
+decrementchild() {
+    this.subchild.decrement();
+}
 
 }

@@ -7,12 +7,23 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { HomeComponent } from './components/home/home.component';
+import { ChildComponent } from './components/signin/child/child.component';
+import { SubchildComponent } from './components/signin/subchild/subchild.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { Child1Component } from './components/parent/child1/child1.component';
+import { FormsComponent } from './components/forms/forms.component';
+import { TemplateComponent } from './components/forms/template/template.component';
+import { FormgroupComponent } from './components/forms/formgroup/formgroup.component';
+import { FormbuilderComponent } from './components/forms/formbuilder/formbuilder.component';
+
 
 const routes: Routes = [
   {path:'',redirectTo:'/signin', pathMatch: 'full'},
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'parent', component: ParentComponent },
+  { path: 'formscomponent', component: FormsComponent },
   {path:'**',component:PagenotfoundComponent}
 ];
 
@@ -28,5 +39,13 @@ export const components = [
   HeaderComponent,
   FooterComponent,
   SidenavComponent,
+  ChildComponent,
+  SubchildComponent,
+  ParentComponent,
+  Child1Component,
+  FormsComponent,
+  TemplateComponent,
+  FormgroupComponent,
+  FormbuilderComponent,
   PagenotfoundComponent
 ]
