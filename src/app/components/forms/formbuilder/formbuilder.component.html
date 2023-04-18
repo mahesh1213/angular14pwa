@@ -120,13 +120,29 @@
    
     </div> 
    
+    <div formArrayName="skills">
+      <div *ngFor="let skill of skills['controls']; let i=index">
+        <div [formGroupName]="i">
+          {{i}}
+          skill name :
+          <input type="text" formControlName="skill">
+          exp:
+          <input type="text" formControlName="exp">
+   
+          <button (click)="removeSkill(i)">Remove</button>
+        </div>
+      </div>
+    </div>
+
     <p>
       <button type="submit" [disabled]="!contactForm.valid">Submit</button>
     </p>
    
   </form>
 </div>
-
+<p>
+  <button type="button" (click)="addSkills()">Add</button>
+</p>
   <div style="float: right; width:50%;">
  
     <h3>Form Status</h3>

@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoggerService } from 'src/app/core/services/logger.service';
+import {ProductsService} from '../../../core/services/products.service';
 
 @Component({
   selector: 'app-formbuilder',
   templateUrl: './formbuilder.component.html',
-  styleUrls: ['./formbuilder.component.css']
+  styleUrls: ['./formbuilder.component.css'],
 })
 export class FormbuilderComponent implements OnInit {
   contactForm:any;
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,@Inject(ProductsService) private productservice:any) { }
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
@@ -22,8 +24,30 @@ export class FormbuilderComponent implements OnInit {
         city: ['', [Validators.required]],
         street: ['', [Validators.required]],
         pincode: ['', [Validators.required]],
-      })
+      }),
+      skills: this.fb.array([]) ,
     });
+    this.addSkills();
+    console.log(this.productservice.getProducts());
+  }
+
+  get skills() : FormArray {
+    return this.contactForm.get("skills") as FormArray
+  }
+ 
+  newSkill(): FormGroup {
+    return this.fb.group({
+      skill: '',
+      exp: '',
+    })
+  }
+ 
+  addSkills() {
+    this.skills.push(this.newSkill());
+  }
+ 
+  removeSkill(i:number) {
+    this.skills.removeAt(i);
   }
 
   get firstname() {

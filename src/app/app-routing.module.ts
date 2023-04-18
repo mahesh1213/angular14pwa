@@ -15,6 +15,7 @@ import { FormsComponent } from './components/forms/forms.component';
 import { TemplateComponent } from './components/forms/template/template.component';
 import { FormgroupComponent } from './components/forms/formgroup/formgroup.component';
 import { FormbuilderComponent } from './components/forms/formbuilder/formbuilder.component';
+import { DependencyinjectionComponent } from './dependencyinjection/dependencyinjection.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,11 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'parent', component: ParentComponent },
   { path: 'formscomponent', component: FormsComponent },
+  {path:'dependencyinjection',component:DependencyinjectionComponent,
+    children:[
+      {path:'admin',loadChildren:() => import('./admin/admin.module').then(m => m.AdminModule)}
+     ]
+   },
   {path:'**',component:PagenotfoundComponent}
 ];
 
@@ -47,5 +53,6 @@ export const components = [
   TemplateComponent,
   FormgroupComponent,
   FormbuilderComponent,
+  DependencyinjectionComponent,
   PagenotfoundComponent
 ]

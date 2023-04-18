@@ -11,16 +11,21 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoggerService } from './core/services/logger.service';
+import { ProductsService } from './core/services/products.service';
+import { EagarlyModule } from './eagarly/eagarly.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    components,
+    components
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    EagarlyModule,
     MaterialModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
@@ -36,6 +41,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   providers: [
     //{provide : LocationStrategy , useClass: HashLocationStrategy}
+    ProductsService,
+    LoggerService
   ],
   bootstrap: [AppComponent]
 })
