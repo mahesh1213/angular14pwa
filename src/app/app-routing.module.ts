@@ -16,6 +16,7 @@ import { TemplateComponent } from './components/forms/template/template.componen
 import { FormgroupComponent } from './components/forms/formgroup/formgroup.component';
 import { FormbuilderComponent } from './components/forms/formbuilder/formbuilder.component';
 import { DependencyinjectionComponent } from './dependencyinjection/dependencyinjection.component';
+import { DashboardComponent } from './eagarly/components/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'formscomponent', component: FormsComponent },
   {path:'dependencyinjection',component:DependencyinjectionComponent,
     children:[
+      {path:'eager',component:DashboardComponent},
       {path:'admin',loadChildren:() => import('./admin/admin.module').then(m => m.AdminModule)}
      ]
    },

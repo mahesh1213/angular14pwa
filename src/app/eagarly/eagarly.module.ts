@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { EagarlyRandomnumberService } from './service/randomnumber.service';
 
 const routes:Routes =[
-  {path:'eagarly',component:DashboardComponent}
+  {path:'eager',component:DashboardComponent}
 ]
+
+console.log('Eagarly module calling');
 
 @NgModule({
   declarations: [
@@ -15,6 +18,7 @@ const routes:Routes =[
     CommonModule,
     RouterModule.forChild(routes)
   ],
+  providers:[],
   exports:[RouterModule,DashboardComponent],
 
 })

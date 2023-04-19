@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+//@Injectable()
 
-export class RandomService {
+export class AdminRandomService {
   sharedValue: string;
 
   constructor() {

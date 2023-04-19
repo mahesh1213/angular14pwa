@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+//@Injectable()
 export class RandomnumberService {
 
   sharedValue: string;

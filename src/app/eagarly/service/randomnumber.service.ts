@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-@Injectable()
-export class RandomnumberService {
+@Injectable({
+  providedIn: 'root'
+})
+//@Injectable()
+export class EagarlyRandomnumberService {
 
   sharedValue: string;
 

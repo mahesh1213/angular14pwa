@@ -14,9 +14,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoggerService } from './core/services/logger.service';
 import { ProductsService } from './core/services/products.service';
 import { EagarlyModule } from './eagarly/eagarly.module';
+import { RandomnumberService } from './core/services/randomnumber.service';
 
 
-
+console.log('app module calling');
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +25,8 @@ import { EagarlyModule } from './eagarly/eagarly.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     EagarlyModule,
+    AppRoutingModule,
     MaterialModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
