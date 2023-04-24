@@ -1,0 +1,11 @@
+<p>slefskipoption works! {{randomNo}}</p>
+<app-selfskipchild></app-selfskipchild>
+<br/>
+<div>
+    @skip -> we added for grandchild and its directives and grandchild it create different instance.
+    @skipSelf -> we added for grandchild and it create different instance for only directive.
+    @optional - > it not emmited any error if service is not exist.
+    @host -> which is the Host Component. Here it will only look in the ViewProviders and not in Providers array.
+    Add the RandomService to the Providers of the GrandChildComponent. Because that is where DI looks first for dependency.
+
+</div>

@@ -1,0 +1,68 @@
+<h1>Custom Validator in Angular</h1>
+ 
+<h2>Reactive Form</h2>
+ 
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+ 
+    <div>
+        <label for="numVal">Number :</label>
+        <input type="text" id="numVal" name="numVal" formControlName="numVal">
+        <div *ngIf="!numVal?.valid && (numVal?.dirty ||numVal?.touched)">
+          <div *ngIf="numVal?.errors?.['gte']">
+            The number should be greater than {{numVal?.errors?.['requiredValue']}}
+          </div>
+        </div>
+     
+      </div>
+
+      <div>
+        <label for="numValue">Number :</label>
+        <input type="text" id="numValue" name="numValue" formControlName="numValue">
+        <div *ngIf="!numValue?.valid && (numValue?.dirty ||numValue?.touched)">
+          <div *ngIf="numValue?.errors?.['gte']">
+            The number should be greater than {{numValue?.errors?.['requiredValue']}}
+          </div>
+        </div>
+     
+      </div>
+
+      <div>
+        <label for="numValueData">Number :</label>
+        <input type="text" id="numValueData" name="numValue" formControlName="numValueData">
+        <div *ngIf="!numValueData?.valid && (numValueData?.dirty ||numValueData?.touched)">
+          <div *ngIf="numValueData?.errors?.['gte']">
+            The number should be greater than {{numValueData?.errors?.['requiredValue']}}
+          </div>
+        </div>
+     
+      </div>
+
+      <div>
+        <label for="password">password :</label>
+        <input type="text" id="password" name="password" formControlName="password">
+        <div *ngIf="!password?.valid && (password?.dirty ||password?.touched)">
+          <div [hidden]="!password?.errors?.['required']">
+            password is required.
+          </div>
+        </div>
+     
+      </div>
+
+      <div>
+        <label for="confirm">confirm :</label>
+        <input type="text" id="confirm" name="confirm" formControlName="confirm">
+        <!-- <div *ngIf="!confirm?.valid && (confirm?.dirty ||confirm?.touched)"> -->
+            <div *ngIf="myForm?.errors && myForm?.errors?.['noMatch']">
+                Passwords do not match
+             </div>
+        <!-- </div> -->
+     
+      </div>
+   <!-- <div>
+    {{myForm?.errors?.['noMatch'] | json}}
+   </div> -->
+  <p>
+    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+  </p>
+ 
+</form>

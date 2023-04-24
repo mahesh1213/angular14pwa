@@ -15,13 +15,15 @@ import { LoggerService } from './core/services/logger.service';
 import { ProductsService } from './core/services/products.service';
 import { EagarlyModule } from './eagarly/eagarly.module';
 import { RandomnumberService } from './core/services/randomnumber.service';
+import { SlefskipoptionDirective } from './components/slefskipoption/directive/slefskipoption.directive';
 
 
 console.log('app module calling');
 @NgModule({
   declarations: [
     AppComponent,
-    components
+    components,
+    SlefskipoptionDirective,
   ],
   imports: [
     BrowserModule,

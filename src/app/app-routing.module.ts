@@ -17,7 +17,10 @@ import { FormgroupComponent } from './components/forms/formgroup/formgroup.compo
 import { FormbuilderComponent } from './components/forms/formbuilder/formbuilder.component';
 import { DependencyinjectionComponent } from './dependencyinjection/dependencyinjection.component';
 import { DashboardComponent } from './eagarly/components/dashboard/dashboard.component';
-
+import { SlefskipoptionComponent } from './components/slefskipoption/slefskipoption.component';
+import { SelfSkipChildComponent } from './components/slefskipoption/child/child.component';
+import { SelfSkipGrandchildComponent } from './components/slefskipoption/grandchild/grandchild.component';
+import { CustomvalidatorComponent } from './components/forms/customvalidator/customvalidator.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/signin', pathMatch: 'full'},
@@ -26,6 +29,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'parent', component: ParentComponent },
   { path: 'formscomponent', component: FormsComponent },
+  {path:'selfskipoption',component:SlefskipoptionComponent},
   {path:'dependencyinjection',component:DependencyinjectionComponent,
     children:[
       {path:'eager',component:DashboardComponent},
@@ -56,5 +60,9 @@ export const components = [
   FormgroupComponent,
   FormbuilderComponent,
   DependencyinjectionComponent,
+  SlefskipoptionComponent,
+  SelfSkipChildComponent,
+  SelfSkipGrandchildComponent,
+  CustomvalidatorComponent,
   PagenotfoundComponent
 ]
