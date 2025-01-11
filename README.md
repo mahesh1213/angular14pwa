@@ -1,10 +1,40 @@
 # Angularpwa
 
 https://incedoinc.zoom.us/j/99463083613
+
 https://teams.microsoft.com/l/meetup-join/19%3ameeting_NDkyNTIzYjktYTlkNi00NWRjLWFhZmMtYTE3OTllNDdiMTkx%40thread.v2/0?context=%7b%22Tid%22%3a%2218791e17-6159-4f52-a8d4-de814ca8284a%22%2c%22Oid%22%3a%22a42fa20b-afcd-4a73-81e2-827586c2c33f%22%7d
 
 
 https://teams.microsoft.com/l/meetup-join/19%3ameeting_MWIyMTE1NTYtN2I3Zi00NDkzLWJmNzUtNjczZTM2ODUzODZm%40thread.v2/0?context=%7b%22Tid%22%3a%22667ede8d-b2c1-4471-88e7-8874a306811e%22%2c%22Oid%22%3a%221e98a5d7-5a23-4645-97d9-be5a33d783cd%22%7d
+
+ /*** L1 Round js questions***/
+ 
+ 1) let and const with examples.
+ 2) Shallow and Deep copy with examples with nested object.
+ 3) sort array of elements with numbers without build method.
+ 4) let name = "ishan guptha"; //output is "Ishan Guptha"
+ 5) let arr1 = [20,40,33,55,89,90]; // output filter array elements greaterThan "55" 
+ //  and multiple with "2" example output:- [178, 180]
+  /*** L1 Round angular questions***/
+ 6) create service with http request in angular.
+ 7) pipes with examples. custom pipes.
+ 8) how to call series api calls in angular.
+ 9) rxjs operater's.
+ 10) communation b/w components.
+ 11) npm and npx difference
+ 12) package.json and package.lock.json and anglar.json file
+ 
+  /*** L2 Round angular questions***/
+  1) based on my project how to use crypto-js for Encrypting Decrypting Data.
+  2) what is mico-front end. how to implement
+  3) Angular Architecture
+  4) how to use ngrx-store (selectors,effects,reducers,actions)
+  5) view encaplation
+  6) ChangeDetectionStrategy
+  7) signals
+  8) diff b/w angular signals and rxjs-observables.
+  9) @HostBinding and @HostListener
+  10) how change styles for angular-material components
 
 
 
