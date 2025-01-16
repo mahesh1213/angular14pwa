@@ -13,6 +13,8 @@ https://griddynamics.zoom.us/j/92344950812?pwd=bDkQ0btNvi5I1NHkbqKMi648JG21xi.
 
 https://teams.microsoft.com/l/meetup-join/19%3ameeting_NWRkN2ViZTItMDI4Ni00ZWYyLWE2MmMtY2YwYjVlODYxMGQw%40thread.v2/0?context=%7b%22Tid%22%3a%220159e9d0-09a0-4edf-96ba-a3deea363c28%22%2c%22Oid%22%3a%2249188da8-4718-48d6-9735-ed21064d153f%22%7d
 
+https://www.google.com/url?q=https%3A%2F%2Fgriddynamics.zoom.us%2Fj%2F93140354998%3Fpwd%3DAb8CAxVATqGUwTAk64Wy46TYAL4fxm.1&sa=D&source=calendar&usd=2&usg=AOvVaw2q6HbGXr-yZhtV_IOnsvpP
+
  /*** L1 Round js questions***/
  
  1) let and const with examples.
